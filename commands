@@ -1,0 +1,4 @@
+{ "command": "state" }
+{ "command": "stop", "agitator": 0 }
+{ "command": "home", "agitator": 0 }
+{ "command": "start", "agitator": 0, "interval": 300, "speed": 190, "duration": 30000 }
