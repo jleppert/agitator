@@ -2,7 +2,7 @@
 #include <ArduinoJson.h>
 #include <SimpleTimer.h>
 #define AGITATORS 4
-#define REVERSE 0.5
+#define REVERSE_TIME 0.5
 #define STATE_UPDATE_INTERVAL 20
 
 AF_DCMotor agitators[AGITATORS] = { AF_DCMotor(1), AF_DCMotor(2), AF_DCMotor(3), AF_DCMotor(4) };
@@ -142,7 +142,7 @@ void updateState() {
        if(state.totalInterval > 0) {
          if(state.currentInterval < state.totalInterval) {
            if(state.direction == BACKWARD) {
-             state.currentInterval = state.currentInterval + (STATE_UPDATE_INTERVAL * REVERSE);
+             state.currentInterval = state.currentInterval + (STATE_UPDATE_INTERVAL * REVERSE_TIME);
            } else {
              state.currentInterval = state.currentInterval + STATE_UPDATE_INTERVAL;
            }
